@@ -88,15 +88,15 @@ display: none;
     var ul = document.getElementById("opg2");
     var li = document.createElement("li");
     var children = ul.children.length + 1
-    li.setAttribute("id", "element"+children)
-    li.appendChild(document.createTextNode("Element "+children));
+    li.setAttribute("id", +children)
+    li.appendChild(document.createTextNode(+children));
     ul.appendChild(li)
 }</script>
 
 <ul id="opg2">
-    <li id="element1">One</li>
-    <li id="element2">Two</li>
-    <li id="element3">Three</li>
+    <li id="element1">1</li>
+    <li id="element2">2</li>
+    <li id="element3">3</li>
     </ul> 
     
     <div class="btn" onClick="addAnother()"> Add Element </div>
