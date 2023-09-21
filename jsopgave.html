@@ -37,6 +37,20 @@ background-color: blue;
     text-align: center;
     line-height: 25px;
 }
+
+
+#show {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+}
+        
+
+    .is-hidden {
+  display: none;
+}
     </style>
 
 <h1>Opgave 1</h1>
@@ -100,22 +114,15 @@ Når de klikkes skal den skifte billedet ud med næste i rækken</p>
 <p>Lav en side med en div, billede eller lignende. <br>
     Når knappen klikkes skal den henholdsvis vise og skjule elementet</p>
 
+    <h2>1st example</h2>
+
     <button onclick="opg4()">Try it</button>
-    <style>
-        #show {
-          width: 100%;
-          padding: 50px 0;
-          text-align: center;
-          background-color: lightblue;
-          margin-top: 20px;
-        }
-        </style>
 
     <div id="show">
     This is my DIV element.
     </div>
-<script>
 
+<script>
 function opg4() {
   var x = document.getElementById("show");
   if (x.style.display === "none") {
@@ -124,6 +131,20 @@ function opg4() {
     x.style.display = "none";
   }
 }
+</script>
+
+<h2>2nd example</h2>
+
+<button id="toggle">TOGGLE</button>
+<div id="content" class="is-hidden">Some content...</div>
+
+<script>
+const elToggle  = document.querySelector("#toggle");
+const elContent = document.querySelector("#content");
+
+elToggle.addEventListener("click", function() {
+  elContent.classList.toggle("is-hidden");
+});
 </script>
 
 <h1>Opgave 5</h1>
