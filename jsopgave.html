@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript opgave</title>
+
+</head>
+<body>
+    
+<style>
+body {
+background-color:black;
+color:white;}
+
+.button {
+    border: none;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    color: white;
+    padding:20px;
+        }
+
+.button1 {
+background-color: purple;
+}
+
+.button2 {
+background-color: blue;
+}
+
+.btn {
+    width: 100px;
+    height: 25px;
+    background: red;
+    color: white;
+    text-align: center;
+    line-height: 25px;
+}
+
+    </style>
+
+<h1>Opgave 1</h1>
+<p> Hver knap skal have en farve. <br>
+    Denne farve skal baggrunden få på siden når vi klikker på knappen.</p>
+    
+    
+<div class = "button">
+ <p id="demo"></p>
+<button class = "button button1" onclick="myFunction()" >Knap 1</button:>
+<script>
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "Hello World";
+        }
+    </script>
+</div>
+
+<div class = "button">
+    <div id="myDIV"></p>
+    <button class = "button button2" onclick="myFunction2()" >Knap 2</button:></div>
+    <script>
+        function myFunction2() {
+            document.body.style.backgroundColor= "blue";
+}
+        </script>
+</div>
+
+<h1>Opgave 2</h1>
+<p> Lav en side med en tom ul. <br>
+    Når man klikker på en knap skal den tilføje et nyt element med stigende tal.</p>
+
+    <script>
+addAnother = function() {
+    var ul = document.getElementById("list");
+    var li = document.createElement("li");
+    var children = ul.children.length + 1
+    li.setAttribute("id", "element"+children)
+    li.appendChild(document.createTextNode("Element "+children));
+    ul.appendChild(li)
+}</script>
+
+<ul id="list">
+    <li id="element1">One</li>
+    <li id="element2">Two</li>
+    <li id="element3">Three</li>
+    </ul> 
+    
+    <div class="btn" onClick="addAnother()"> Add Element </div>
+
+    <h1>Opgave 3</h1>
+    <p> Lav en side med et billede og to knapper. <br>
+        Knapperne skal hedde ”forrige” og ”næste”. <br>
+        Når de klikkes skal den skifte billedet ud med næste i rækken</p>
+
+
+
+</body>
+</html>
