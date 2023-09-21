@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript opgave</title>
-
 </head>
 <body>
-    
+
 <style>
 body {
 background-color:black;
@@ -38,26 +37,24 @@ background-color: blue;
     text-align: center;
     line-height: 25px;
 }
-
     </style>
 
 <h1>Opgave 1</h1>
 <p> Hver knap skal have en farve. <br>
     Denne farve skal baggrunden få på siden når vi klikker på knappen.</p>
-    
-    
+      
 <div class = "button">
- <p id="demo"></p>
-<button class = "button button1" onclick="myFunction()" >Knap 1</button:>
+ <p id="demo1"></p>
+<button class = "button button1" onclick="myFunctionhello()" >Knap 1</button:>
 <script>
-        function myFunction() {
-          document.getElementById("demo").innerHTML = "Hello World";
+        function myFunctionhello() {
+          document.getElementById("demo1").innerHTML = "Hello World";
         }
     </script>
 </div>
 
 <div class = "button">
-    <div id="myDIV"></p>
+    <div id="demo2"></p>
     <button class = "button button2" onclick="myFunction2()" >Knap 2</button:></div>
     <script>
         function myFunction2() {
@@ -71,8 +68,8 @@ background-color: blue;
     Når man klikker på en knap skal den tilføje et nyt element med stigende tal.</p>
 
     <script>
-addAnother = function() {
-    var ul = document.getElementById("list");
+    addAnother = function() {
+    var ul = document.getElementById("opg2");
     var li = document.createElement("li");
     var children = ul.children.length + 1
     li.setAttribute("id", "element"+children)
@@ -80,7 +77,7 @@ addAnother = function() {
     ul.appendChild(li)
 }</script>
 
-<ul id="list">
+<ul id="opg2">
     <li id="element1">One</li>
     <li id="element2">Two</li>
     <li id="element3">Three</li>
@@ -88,12 +85,51 @@ addAnother = function() {
     
     <div class="btn" onClick="addAnother()"> Add Element </div>
 
-    <h1>Opgave 3</h1>
-    <p> Lav en side med et billede og to knapper. <br>
-        Knapperne skal hedde ”forrige” og ”næste”. <br>
-        Når de klikkes skal den skifte billedet ud med næste i rækken</p>
+<h1>Opgave 3</h1>
+<p> Lav en side med et billede og to knapper. <br>
+Knapperne skal hedde ”forrige” og ”næste”. <br>
+Når de klikkes skal den skifte billedet ud med næste i rækken</p>
 
+<button onclick="document.getElementById('myImage').src='./img/joke_alvi_møller.jpg'">Næste</button>
 
+<img id="myImage" src="./img/desperat_alvi_møller.jpg" style="width:50%">
+
+<button onclick="document.getElementById('myImage').src='./img/desperat_alvi_møller.jpg'">Forrige</button>
+
+<h1>Opgave 4</h1>
+<p>Lav en side med en div, billede eller lignende. <br>
+    Når knappen klikkes skal den henholdsvis vise og skjule elementet</p>
+
+    <button onclick="opg4()">Try it</button>
+    <style>
+        #show {
+          width: 100%;
+          padding: 50px 0;
+          text-align: center;
+          background-color: lightblue;
+          margin-top: 20px;
+        }
+        </style>
+
+    <div id="show">
+    This is my DIV element.
+    </div>
+<script>
+
+function opg4() {
+  var x = document.getElementById("show");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+<h1>Opgave 5</h1>
+<p>Lav en side med et tekst-element, p eller ligende. <br>
+    Lav nogle knapper med hver deres indhold. <br>
+    Når man klikker på en knap skal den tilføje det til teksten</p>
 
 </body>
 </html>
