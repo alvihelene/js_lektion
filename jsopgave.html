@@ -49,10 +49,6 @@ background-color: blue;
 .is-hidden {
 display: none;
 }
-
-.opg5-hidden {
-    display: none;
-}
     </style>
 
 <h1>Opgave 1</h1>
@@ -154,17 +150,36 @@ elToggle.addEventListener("click", function() {
     Lav nogle knapper med hver deres indhold. <br>
     Når man klikker på en knap skal den tilføje det til teksten</p>
 
-    <button id="opg5">TOGGLE</button>
-    <div id="opg5text" class="opg5-hidden">Some content...</div>
-    
-    <script>
-    const elOpg5  = document.querySelector("#opg5");
-    const elOpg5text = document.querySelector("#opg5text");
-    
-    elOpg5.addEventListener("click", function() {
-    elOpg5text.classList.toggle("opg5-hidden");
-    });
+<button onclick="myText1()"> hej </button>
+<button onclick="myText2()"> med </button>
+<button onclick="myText3()"> dig </button>
+
+<p></p>
+
+<script>
+    function myText1() {
+        var btn = document.createElement("text");
+        var t = document.createTextNode(" hej ");
+        btn.appendChild(t);
+        document.body.appendChild(btn);
+    }
+
+    function myText2() {
+        var btn = document.createElement("text");
+        var t = document.createTextNode(" med ");
+        btn.appendChild(t);
+        document.body.appendChild(btn);
+    }
+
+    function myText3() {
+        var btn = document.createElement("text");
+        var t = document.createTextNode(" dig ");
+        btn.appendChild(t);
+        document.body.appendChild(btn);
+    }
+
     </script>
+
 
 </body>
 </html>
