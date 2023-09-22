@@ -150,11 +150,11 @@ elToggle.addEventListener("click", function() {
     Lav nogle knapper med hver deres indhold. <br>
     Når man klikker på en knap skal den tilføje det til teksten</p>
 
+<h2>1st example</h2>
+
 <button onclick="myText1()"> hej </button>
 <button onclick="myText2()"> med </button>
 <button onclick="myText3()"> dig </button>
-
-<p></p>
 
 <script>
     function myText1() {
@@ -177,9 +177,155 @@ elToggle.addEventListener("click", function() {
         btn.appendChild(t);
         document.body.appendChild(btn);
     }
-
     </script>
 
+<h2>2nd example</h2>
+
+<button onclick="addText(' hej ')"> hej </button>
+<button onclick="addText(' med ')"> med </button>
+<button onclick="addText(' dig ')"> dig </button>
+<button onclick="clearText()">SLET</button>
+<br>
+<input type="text" id="textInput" size="40" placeholder="Tryk på knapperne">
+<p id="outputText"></p>
+
+<script>
+    function addText(text) {
+        var input = document.getElementById('textInput');
+        input.value += text;
+    }
+
+    function clearText() {
+        var input = document.getElementById('textInput');
+        input.value = '';
+    }
+</script>
+
+
+<h1>Opgave 6</h1>
+<p>Lav en liste af elementer. <br>
+    Ud for hvert element skal der være en knap der hedder ”fjern”. <br>
+    Den skal så fjerne elementet fra listen</p>
+
+<h2> 1st example</h2>
+
+    <ul id="elementList"></ul>
+
+    <input type="text" id="addElement" placeholder="Enter an element">
+    <button onclick="addElement()">Add Element</button>
+
+    <script>
+        function addElement() {
+            var inputElement = document.getElementById('addElement');
+            var elementList = document.getElementById('elementList');
+
+            if (inputElement.value.trim() === '') {
+                alert('Please enter an element before adding.');
+                return;
+            }
+
+            var listItem = document.createElement('li');
+            listItem.innerHTML = `
+                ${inputElement.value}
+                <button onclick="deleteElement(this)">Delete</button>
+            `;
+
+            elementList.appendChild(listItem);
+            inputElement.value = '';
+        }
+
+        function deleteElement(button) {
+            var listItem = button.parentNode;
+            listItem.parentNode.removeChild(listItem);
+        }
+    </script>
+
+<h2> 2nd example</h2>
+
+<ul id="elementList">
+    <li>
+        Element 1 <button onclick="deleteElement(this)">Delete</button>
+    </li>
+
+    <li>
+        Element 2 <button onclick="deleteElement(this)">Delete</button>
+    </li>
+
+    <li>
+        Element 3 <button onclick="deleteElement(this)">Delete</button>
+    </li>
+</ul>
+
+<script>
+function deleteElement(button) {
+    var listItem = button.parentNode;
+    listItem.parentNode.removeChild(listItem);
+}
+</script>
+
+
+<h1>Opgave 7</h1>
+<p>Lav en simpel formular. <br>
+    Når man klikker ”submit” skal du validere om felterne er udfyldt rigtigt. <br>
+    Ellers vises en fejlbesked</p>
+
+<form id="myForm" onsubmit="return validateForm()">
+    <label for="name">Navn:</label>
+    <input type="text" id="name" name="name">
+    <br>
+    <label for="email">Email:</label> 
+    <input type="email" id="email" name="email">
+    <br>
+    <label for="message">Besked:</label>
+    <textarea id="message" name="message"></textarea>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+<p id="error" style="color: red;"></p>
+
+
+<script>
+function validateForm () {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+    var error = document.getElementById('error');
+
+    if (name== '' || email === '' || message === '') {
+        error.textContent = 'Udfyld alle felter.';
+        return false; //sender ikke formen
+    } else {
+        error.textContent =''; //sletter tidligere fejlbeskeder
+        return true; //tillader at sende formen
+    }
+}
+</script>
+
+
+
+<h1>Opgave 8</h1>
+<p>Lav en side med en div og en knap. <br>
+Når knappen klikkes skal farven ændre sig til en tilfældig farve.</p>
+
+<button id="colorButton" onclick="changeColor()">Skift farve</button>
+
+<script>
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function changeColor() {
+    var button = document.getElementById('colorButton');
+    var randomColor = getRandomColor();
+    button.style.backgroundColor = randomColor;
+}
+
+</script>
 
 </body>
 </html>
